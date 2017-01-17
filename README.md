@@ -22,12 +22,14 @@ dependencies {
 
 ## Use
 1. define your adapter
+   
 ```Java
  final BaseSuperAdapter mAdapter = new BaseSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
             @Override
             public int getType(int position) {
                 Log.i(TAG, "getType: position = " + position);
-                if (position % 2 == 0) {
+                //if you has more than one type view,you need to return different type.
+                if (position % 2 == 0) {
                     return 0;
                 } else {
                     return 1;
@@ -37,10 +39,12 @@ dependencies {
             @Override
             public int getLayoutId(int viewType) {
                 return android.R.layout.simple_list_item_1;
+                //you can return different layout for the different viewtype.
             }
 
             @Override
             public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
+                //bind your data with your view here
                 TextView tv = holder.findViewById(android.R.id.text1);
                 if (viewType == 0) {
                     tv.setText(data);

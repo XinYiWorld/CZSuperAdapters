@@ -66,10 +66,8 @@ public abstract class BaseIndicatorController {
      */
     public void setAnimationStatus(AnimStatus animStatus){
         if (mAnimators==null){
-            Log.i(TAG, "setAnimationStatus: mAnimators==null --  true");
             return;
         }
-        Log.i(TAG, "setAnimationStatus: mAnimators==null --  false");
         int count=mAnimators.size();
         for (int i = 0; i < count; i++) {
             Animator animator=mAnimators.get(i);

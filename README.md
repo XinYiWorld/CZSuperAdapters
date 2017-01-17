@@ -13,7 +13,9 @@ allprojects {
 ```
 <br />
 2. second,edit your module build.gradle<br />
+```Groovy
 dependencies {
     ...
     compile 'com.github.XinYiWorld:CZSuperAdapters:1.0'
 }
+```

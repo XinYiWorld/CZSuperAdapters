@@ -71,5 +71,5 @@ dependencies {
         recyclerView.requestLayout();
 ```
 2. extra functions<br />
-   . enable refresh
+    
      

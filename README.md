@@ -22,7 +22,7 @@ dependencies {
 
 ## Use
 1. define your adapter<br />
-`Warning:`
+`Warning:`you need to pass RecyclerView for the constructor of CZSuperAdapter,because I need to bind touch event with RecylerView in CZSuperAdapter.
 ```Java
  final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
             @Override
@@ -58,4 +58,18 @@ dependencies {
                 }
             }
         });
+        
+         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        
+        //simulate some data for adapter
+        List<String> temp = new ArrayList<>();
+        for (int i = 0; i < 12; i++) {
+            temp.add("我是第" + (i + 1) + "个条目");
+        }
+        mAdapter.addAll(temp);
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.requestLayout();
 ```
+2. extra functions<br />
+   . enable refresh
+     

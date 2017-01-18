@@ -22,7 +22,7 @@ dependencies {
 
 ## Use
 1. define your adapter<br />
-<font color="#ff0000">浅红色文字：</font>
+<font color="#dd0000">浅红色文字：</font>
 ```Java
  final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
             @Override

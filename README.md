@@ -70,6 +70,7 @@ dependencies {
         recyclerView.setAdapter(mAdapter);
         recyclerView.requestLayout();
 ```
+<br />
 2. extra functions<br />
     
      

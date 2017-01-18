@@ -71,8 +71,8 @@ dependencies {
         recyclerView.requestLayout();
 ```
 <br />
-2. extra functions<br />
-   
+2. extra functions
+    <br />
    * enable refresh
    * enable loadmore
    * add header 

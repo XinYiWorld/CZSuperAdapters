@@ -24,7 +24,7 @@ dependencies {
 1. define your adapter
    
 ```Java
- final BaseSuperAdapter mAdapter = new BaseSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
+ final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
             @Override
             public int getType(int position) {
                 Log.i(TAG, "getType: position = " + position);

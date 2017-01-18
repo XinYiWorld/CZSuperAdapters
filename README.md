@@ -22,7 +22,7 @@ dependencies {
 
 ## Use
 1. define your adapter<br />
-*single asterisks*
+`Warning:`
 ```Java
  final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
             @Override

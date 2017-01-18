@@ -73,9 +73,7 @@ dependencies {
 <br />
 2. extra functions
     <br />
-   * enable refresh
-   * enable loadmore
-   * add header 
-   * add footer
+   * enable refresh
+   
   
      

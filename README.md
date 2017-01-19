@@ -100,7 +100,9 @@ final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new M
         mAdapter.setRefreshController(refreshController);       //call this method to enable refresh   (调用此方法才能
   开启刷新）
    ```
+   
    * enable loadmore (开启加载更多)
+   
    ```Java
      loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
             @Override
@@ -128,7 +130,9 @@ final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new M
 
         mAdapter.setLoadController(loadController);             //call this method to enable loadmore (调用此方法才能开启加载更多)
    ```
+   
    * add header (添加头布局)
+   
    ```Java
     MultiTypeMaker header1 = new MultiTypeMaker<String>() {
             @Override
@@ -152,7 +156,9 @@ final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new M
 此方法添加头部,想添加几个就添加几个)
         //mAdapter.remove(header1);             //remove header  (移除头部)
    ```
+   
    * add footer  (添加脚布局)
+   
    ```Java
     MultiTypeMaker footerTypeMaker = new MultiTypeMaker<String>() {
             @Override

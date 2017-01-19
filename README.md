@@ -74,6 +74,31 @@ dependencies {
 2. extra functions
     <br />
    * enable refresh
+   ```Java
+   refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
+            @Override
+            public void onRefresh() {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshController.finishRefresh();
+                    }
+                }, 1000);
+            }
+
+            @Override
+            public void onPull(int distance) {
+
+            }
+        })
+        //custom your refresh style
+                .setRefreshIndicatorStyle(AVLoadingIndicatorView.Pacman)
+                .setRefreshIndicatorColor(Color.RED)
+                .setPullArrowImage(android.R.drawable.arrow_up_float)
+                .build().create();
+
+        mAdapter.setRefreshController(refreshController);       //call this method to enable refresh
+   ```
    * enable loadmore
    * add header
    * add footer

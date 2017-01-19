@@ -75,7 +75,7 @@ dependencies {
     <br />
    * enable refresh (开启刷新)
    ```Java
-   refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
+    refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
             @Override
             public void onRefresh() {
                 handler.postDelayed(new Runnable() {
@@ -99,10 +99,10 @@ dependencies {
 
         mAdapter.setRefreshController(refreshController);       //call this method to enable refresh   (调用此方法才能
   开启刷新）
-  ```
+   ```
    * enable loadmore (开启加载更多)
    ```Java
-     loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
+   loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
             @Override
             public void onLoadMore() {
                 handler.postDelayed(new Runnable() {
@@ -127,7 +127,6 @@ dependencies {
                 .build().create();
 
         mAdapter.setLoadController(loadController);             //call this method to enable loadmore (调用此方法才能开启加载更多)
-
    ```
    * add header (添加头布局)
    ```Java

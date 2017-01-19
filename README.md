@@ -21,10 +21,10 @@ dependencies {
 ```
 
 ## Use (使用指南)
-1. define your adapter<br /> (定义你的Adapter类)
+1. define your adapter(定义你的Adapter类)<br /> 
 `Warning:`you need to pass RecyclerView for the constructor of CZSuperAdapter,because I need to bind touch event with RecylerView in CZSuperAdapter to achive refresh and load more functions. （注意:在CZSuperAdapterr的构造函数里，要将你的RecyclerView传入进去，因为在CZSuperAdapter的内部我会将touch事件与recycler绑定从而实现刷新和加载更多。）
 ```Java
- final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
+final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new MultiTypeMaker<String>() {
             @Override
             public int getType(int position) {
                 Log.i(TAG, "getType: position = " + position);
@@ -75,7 +75,7 @@ dependencies {
     <br />
    * enable refresh (开启刷新)
    ```Java
-    refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
+     refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
             @Override
             public void onRefresh() {
                 handler.postDelayed(new Runnable() {
@@ -102,7 +102,7 @@ dependencies {
    ```
    * enable loadmore (开启加载更多)
    ```Java
-   loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
+     loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
             @Override
             public void onLoadMore() {
                 handler.postDelayed(new Runnable() {
@@ -129,7 +129,7 @@ dependencies {
         mAdapter.setLoadController(loadController);             //call this method to enable loadmore (调用此方法才能开启加载更多)
    ```
    * add header (添加头布局)
-   ```Java
+   ```Java
     MultiTypeMaker header1 = new MultiTypeMaker<String>() {
             @Override
             public int getType(int position) {
@@ -154,7 +154,7 @@ dependencies {
    ```
    * add footer  (添加脚布局)
    ```Java
-     MultiTypeMaker footerTypeMaker = new MultiTypeMaker<String>() {
+    MultiTypeMaker footerTypeMaker = new MultiTypeMaker<String>() {
             @Override
             public int getType(int position) {
                 return 0;    //don't modify here (不需要修改)

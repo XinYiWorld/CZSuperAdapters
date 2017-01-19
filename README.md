@@ -91,7 +91,7 @@ dependencies {
 
             }
         })
-        //custom your refresh style
+        //custom  refresh style
                 .setRefreshIndicatorStyle(AVLoadingIndicatorView.Pacman)
                 .setRefreshIndicatorColor(Color.RED)
                 .setPullArrowImage(android.R.drawable.arrow_up_float)
@@ -100,7 +100,79 @@ dependencies {
         mAdapter.setRefreshController(refreshController);       //call this method to enable refresh
    ```
    * enable loadmore
+   ```Java
+     loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
+            @Override
+            public void onLoadMore() {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (mAdapter.size() > 30) {
+                            loadController.finishLoadMore(false);
+                        } else {
+                            mAdapter.add("我是加载更多的数据");
+
+                            recyclerView.requestLayout();
+                            loadController.finishLoadMore(true);
+                        }
+                    }
+                }, 2000);
+            }
+        })
+        //custom  loadmore style
+                .setLoadIndicatorStyle(AVLoadingIndicatorView.Pacman)
+                .setLoadIndicatorColor(Color.GREEN)
+                .setLoadMode(LoadMode.CLICK_TO_LOAD)            //the default mode is SCROLL_BOTTOM_TO_LOAD
+                .build().create();
+
+        mAdapter.setLoadController(loadController);             //call this method to enable loadmore
+
+   ```
    * add header
+   ```Java
+    MultiTypeMaker header1 = new MultiTypeMaker<String>() {
+            @Override
+            public int getType(int position) {
+                return 0;
+            }
+
+            @Override
+            public int getLayoutId(int viewType) {
+                return android.R.layout.simple_list_item_1;
+            }
+
+            @Override
+            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
+                TextView text1 = holder.findViewById(android.R.id.text1);
+                text1.setText(data);
+            }
+        };
+        header1.setData("head view 1");
+        mAdapter.addHeader(header1);            //call this method to add a header,of course,you can add more headers as you want
+        //mAdapter.remove(header1);             //remove header
+   ```
    * add footer
-  
+   ```Java
+     MultiTypeMaker footerTypeMaker = new MultiTypeMaker<String>() {
+            @Override
+            public int getType(int position) {
+                return 0;
+            }
+
+            @Override
+            public int getLayoutId(int viewType) {
+                return android.R.layout.simple_list_item_1;
+            }
+
+            @Override
+            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
+                TextView text1 = holder.findViewById(android.R.id.text1);
+                text1.setText(data);
+            }
+
+        };
+        footerTypeMaker.setData("foot view 1");  
+        mAdapter.addFooter(footerTypeMaker);    //call this method to add a footer,of course,you can add more footers as you want
+        mAdapter.remove(footerTypeMaker);       //remove footer
+   ```
      

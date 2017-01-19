@@ -73,6 +73,7 @@ final CZSuperAdapter mAdapter = new CZSuperAdapter(mContext, recyclerView, new M
 <br />
 2. extra functions you can choose to add (额外的一些功能,你可以任意选择加或不加。)
     <br />
+    
     * enable refresh (开启刷新)
     * enable loadmore (开启加载更多)
     * add header (添加头布局)

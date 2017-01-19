@@ -96,8 +96,7 @@ refreshController = new RefreshController.Builder().setOnRefreshListener(new Ref
                 .setPullArrowImage(android.R.drawable.arrow_up_float)
                 .build().create();
 
-        mAdapter.setRefreshController(refreshController);       //call this method to enable refresh   (调用此方法才能
-  开启刷新）
+        mAdapter.setRefreshController(refreshController);       //call this method to enable refresh   (调用此方法才能开启刷新）
 ```
 * enable loadmore (开启加载更多)
 ```Java
@@ -122,7 +121,7 @@ loadController = new LoadController.Builder().setOnLoaderListener(new LoaderList
         //custom  loadmore style (定制加载更多进度条的样式)
                 .setLoadIndicatorStyle(AVLoadingIndicatorView.Pacman)
                 .setLoadIndicatorColor(Color.GREEN)
-                .setLoadMode(LoadMode.CLICK_TO_LOAD)            //the default mode is SCROLL_BOTTOM_TO_LOAD （默认的加载更多的模式是滚动到底部加载更多）
+                .setLoadMode(LoadMode.CLICK_TO_LOAD)            //the default mode is SCROLL_BOTTOM_TO_LOAD （默认的加载更多的模式是滚动到                                                                   底部加载更多）
                 .build().create();
 
         mAdapter.setLoadController(loadController);             //call this method to enable loadmore (调用此方法才能开启加载更多)
@@ -149,7 +148,7 @@ loadController = new LoadController.Builder().setOnLoaderListener(new LoaderList
         };
         header1.setData("head view 1");
         mAdapter.addHeader(header1);            //call this method to add a header,of course,you can add more headers as you want (调用
-此方法添加头部,想添加几个就添加几个)
+                                                  此方法添加头部,想添加几个就添加几个)
         //mAdapter.remove(header1);             //remove header  (移除头部)
 ```
 * add footer  (添加脚布局)
@@ -173,7 +172,6 @@ loadController = new LoadController.Builder().setOnLoaderListener(new LoaderList
 
         };
         footerTypeMaker.setData("foot view 1");  
-        mAdapter.addFooter(footerTypeMaker);    //call this method to add a footer,of course,you can add more footers as you want (调用
-此方法添加脚,想添加几个就添加几个)
+        mAdapter.addFooter(footerTypeMaker);    //call this method to add a footer,of course,you can add more footers as you want (调用                                                   此方法添加脚,想添加几个就添加几个)
         mAdapter.remove(footerTypeMaker);       //remove footer (移除脚)
 ```

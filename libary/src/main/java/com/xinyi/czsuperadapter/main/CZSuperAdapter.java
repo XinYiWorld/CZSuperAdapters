@@ -91,9 +91,9 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
             bindController(multiTypeMaker);        //绑定TypeMaker与对应的监听控制器
 
             CommonViewHolder commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(0), parent, false));
+            commonViewHolder.setParent(parent);
             commonViewHolder.setMultiTypeMaker(multiTypeMaker);
             return commonViewHolder;
-
         } else {  //viewType就是position了(****************************注意要兼容刷新和加载更多没有情况****************************)
             int position = viewType;
             int normalViewType = getViewHolderType(position);
@@ -120,12 +120,12 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                 default:
                     break;
             }
+            commonViewHolder.setParent(parent);
             commonViewHolder.setMultiTypeMaker(multiTypeMaker);
             return commonViewHolder;
         }
 
     }
-
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {        //(*****************position和maker一定要对应上**********************)
@@ -141,7 +141,8 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                 break;
             case MultiTypeMaker.TYPE_NORMAL:        //主体布局
                 if(multiTypeMaker.getType() == MultiTypeMaker.TYPE_FOOTER){     //TODO 有可能复用的还是脚布局。multiTypeMaker就是footer,holder的view也是footer的view。
-                    multiTypeMaker = mNormalTypeMaker;
+//                    multiTypeMaker = mNormalTypeMaker;
+                    onCreateViewHolder(commonViewHolder.getParent(),getItemViewType(position));
                 }
                 multiTypeMaker.bindViewHolder((CommonViewHolder) holder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
                 break;

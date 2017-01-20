@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 public class CommonViewHolder extends RecyclerView.ViewHolder {
     private SparseArray<View> mViews;
     private MultiTypeMaker multiTypeMaker;
+    private ViewGroup parent;
+
 
     public CommonViewHolder(View itemView) {
         super(itemView);
@@ -35,5 +37,13 @@ public class CommonViewHolder extends RecyclerView.ViewHolder {
 
     public void setMultiTypeMaker(MultiTypeMaker multiTypeMaker) {
         this.multiTypeMaker = multiTypeMaker;
+    }
+
+    public ViewGroup getParent() {
+        return parent;
+    }
+
+    public void setParent(ViewGroup parent) {
+        this.parent = parent;
     }
 }

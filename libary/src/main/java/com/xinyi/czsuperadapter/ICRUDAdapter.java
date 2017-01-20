@@ -106,4 +106,11 @@ public abstract class ICRUDAdapter<T> extends RecyclerView.Adapter implements IC
             notifyDataSetChanged();
         }
     }
+
+    protected void myNotifyItem(int position){
+        if(autoNotify){
+            notifyItemInserted(position);
+        }
+    }
+
 }

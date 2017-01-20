@@ -52,12 +52,12 @@ public class MainActivity extends Activity {
 
             @Override
             public int getLayoutId(int viewType) {
-                return android.R.layout.simple_list_item_1;
+                return  R.layout.simple_item_view_main;
             }
 
             @Override
             public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView tv = holder.findViewById(android.R.id.text1);
+                TextView tv = holder.findViewById(R.id.tv_main);
                 if (viewType == 0) {
                     tv.setText(data);
                 } else {
@@ -71,6 +71,11 @@ public class MainActivity extends Activity {
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // set divider
+        DividerLine dividerLine = new DividerLine(DividerLine.VERTICAL);
+        dividerLine.setSize(5);
+        dividerLine.setColor(Color.parseColor("#f0eff4"));
+        recyclerView.addItemDecoration(dividerLine);
 
         List<String> temp = new ArrayList<>();
         for (int i = 0; i < 12; i++) {
@@ -110,11 +115,10 @@ public class MainActivity extends Activity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if (mAdapter.size() > 30) {
+                        if (mAdapter.size() > 15) {
                             loadController.finishLoadMore(false);
                         } else {
-                            mAdapter.add("我是加元的桂花");
-
+                            mAdapter.add("我是加载更多的数据");
                             recyclerView.requestLayout();
                             loadController.finishLoadMore(true);
                         }
@@ -138,18 +142,18 @@ public class MainActivity extends Activity {
 
             @Override
             public int getLayoutId(int viewType) {
-                return android.R.layout.simple_list_item_1;
+                return  R.layout.simple_item_view_header;
             }
 
             @Override
             public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(android.R.id.text1);
+                TextView text1 = holder.findViewById(R.id.tv_header);
+
                 text1.setText(data);
             }
         };
         header1.setData("我是头q1");
         mAdapter.addHeader(header1);
-
 
         MultiTypeMaker header2 = new MultiTypeMaker<String>() {
             @Override
@@ -159,12 +163,12 @@ public class MainActivity extends Activity {
 
             @Override
             public int getLayoutId(int viewType) {
-                return android.R.layout.simple_list_item_1;
+                return R.layout.simple_item_view_header;
             }
 
             @Override
             public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(android.R.id.text1);
+                TextView text1 = holder.findViewById(R.id.tv_header);
                 text1.setText(data);
             }
         };
@@ -180,19 +184,18 @@ public class MainActivity extends Activity {
 
             @Override
             public int getLayoutId(int viewType) {
-                return android.R.layout.simple_list_item_1;
+                return  R.layout.simple_item_view_footer;
             }
 
             @Override
             public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(android.R.id.text1);
+                TextView text1 = holder.findViewById(R.id.tv_footer);
                 text1.setText(data);
             }
 
         };
         footerTypeMaker.setData("我是脚1。。。");
         mAdapter.addFooter(footerTypeMaker);
-
 
         MultiTypeMaker footerTypeMaker2 = new MultiTypeMaker<String>() {
             @Override
@@ -202,12 +205,12 @@ public class MainActivity extends Activity {
 
             @Override
             public int getLayoutId(int viewType) {
-                return android.R.layout.simple_list_item_1;
+                return  R.layout.simple_item_view_footer;
             }
 
             @Override
             public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(android.R.id.text1);
+                TextView text1 = holder.findViewById(R.id.tv_footer);
                 text1.setText(data);
             }
 

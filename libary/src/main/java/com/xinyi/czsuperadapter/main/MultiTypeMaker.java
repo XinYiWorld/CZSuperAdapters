@@ -11,11 +11,11 @@ import com.xinyi.czsuperadapter.interfaces.IBindRecyclerView;
 
 public abstract  class MultiTypeMaker<T> implements IBindRecyclerView {
     public static final int TYPE_REFRESH = 1001;            //下拉刷新
-    public static final int  TYPE_HEADER = 1001;            //头布局
-    public static final int  TYPE_FOOTER = 1002;            //脚布局
-    public static final int  TYPE_LOADER = 1003;            //加载更多
-    public static final int  TYPE_NORMAL = 1004;            //基本类型
-    public static final int  TYPE_UNKNOWN = 1005;            //未知类型
+    public static final int  TYPE_HEADER = 1002;            //头布局
+    public static final int  TYPE_FOOTER = 1003;            //脚布局
+    public static final int  TYPE_LOADER = 1004;            //加载更多
+    public static final int  TYPE_NORMAL = 1005;            //基本类型
+    public static final int  TYPE_UNKNOWN = 1006;            //未知类型
 
     protected  static RecyclerView recyclerView;
     protected  LockObserver lockObserver;

@@ -3,6 +3,7 @@ package com.xinyi.czsuperadapter.main;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * Created by 陈章 on 2016/11/30 0030.
@@ -17,6 +18,7 @@ public class CommonViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         mViews = new SparseArray<>();
     }
+
 
     public <T extends View> T findViewById(int viewId){
         View view = mViews.get(viewId);

@@ -3,6 +3,7 @@ package com.xinyi.czsuperadapter.main;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.xinyi.czsuperadapter.interfaces.IAddTypeMaker;
@@ -20,7 +21,7 @@ public class TypeManager implements IAddTypeMaker ,IGetTypeMaker ,IRemoveTypeMak
     private LoadController loadController;
 
     private List<MultiTypeMaker> headerContainer;
-    private List<MultiTypeMaker> footerContainer;
+    private List<MultiTypeMaker> footerContainer,footerTempContainer;
 
     //增加头布局
     @Override

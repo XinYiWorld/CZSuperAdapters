@@ -1,6 +1,9 @@
 CZSuperAdapter
 ===================================
 A super adapter for recyclerview,you can combine function part like refresh,loadmore,head,foot,multitype free as well as you want(适用于RecyclerView的万能Adapter，方便控制刷新、加载更多、头、脚、多视图。)
+
+## Results demonstrate (效果演示)
+![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/result.gif)
 ## Download (集成指南)
 1. first,edit your application build.gradle<br />
 ```Groovy
@@ -174,3 +177,5 @@ loadController = new LoadController.Builder().setOnLoaderListener(new LoaderList
         mAdapter.addFooter(footerTypeMaker);    //call this method to add a footer,of course,you can add more footers as you want (调用此方法添加脚,想添加几个就添加几个)
         //mAdapter.remove(footerTypeMaker);       //remove footer (移除脚)
 ```
+## Thanks (特别感谢)
+* [AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)

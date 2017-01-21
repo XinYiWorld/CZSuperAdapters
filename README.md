@@ -3,7 +3,7 @@ CZSuperAdapter
 A super adapter for recyclerview,you can combine function part like refresh,loadmore,head,foot,multitype free as well as you want(适用于RecyclerView的万能Adapter，方便控制刷新、加载更多、头、脚、多视图。)
 
 ## Results demonstrate (效果演示)
-![image](CZSuperAdapters/result.gif)
+![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/result.gif)
 ## Download (集成指南)
 1. first,edit your application build.gradle<br />
 ```Groovy

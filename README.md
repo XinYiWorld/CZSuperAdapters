@@ -178,4 +178,4 @@ loadController = new LoadController.Builder().setOnLoaderListener(new LoaderList
         //mAdapter.remove(footerTypeMaker);       //remove footer (移除脚)
 ```
 ## Thanks (特别感谢)
-* [点击这里你可以链接到www.google.com](http://www.google.com)
+* [AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)

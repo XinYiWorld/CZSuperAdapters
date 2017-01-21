@@ -177,3 +177,5 @@ loadController = new LoadController.Builder().setOnLoaderListener(new LoaderList
         mAdapter.addFooter(footerTypeMaker);    //call this method to add a footer,of course,you can add more footers as you want (调用此方法添加脚,想添加几个就添加几个)
         //mAdapter.remove(footerTypeMaker);       //remove footer (移除脚)
 ```
+## Thanks (特别感谢)
+* [点击这里你可以链接到www.google.com](http://www.google.com)

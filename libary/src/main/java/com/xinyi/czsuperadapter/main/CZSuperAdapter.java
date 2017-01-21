@@ -19,6 +19,7 @@ import com.xinyi.czsuperadapter.interfaces.IRemoveTypeMaker;
  * 2)onCreateViewHolder返回的holder被利用的问题:即如果主体数据新增了几条数据，主体数据会复用脚布局的view，导致空指针问题。
  *   复用多视图来实现刷新、加载更多、头、脚，最蛋痛的还是复用的问题。
  *  //TODO 复用的问题
+ *    1》》使用setIsRecyclable(false)勉强可以解决复用的问题，但是影响性能。
  */
 
 public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,IRemoveTypeMaker {
@@ -89,7 +90,6 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
             multiTypeMaker = FuncMultiTypeMakerFactory.create(viewType, recyclerView);
             multiTypeMaker.setType(viewType);
             bindController(multiTypeMaker);        //绑定TypeMaker与对应的监听控制器
-
             CommonViewHolder commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(0), parent, false));
             commonViewHolder.setParent(parent);
             commonViewHolder.setMultiTypeMaker(multiTypeMaker);
@@ -105,17 +105,20 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                     multiTypeMaker = typeManager.getHeader(position - refreshControllerCount);
                     multiTypeMaker.setType(MultiTypeMaker.TYPE_HEADER);
                     commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(0), parent, false));
+//                    commonViewHolder.setIsRecyclable(false);
                     break;
                 case MultiTypeMaker.TYPE_NORMAL:        //主体布局
                     multiTypeMaker = mNormalTypeMaker;
                     multiTypeMaker.setType(MultiTypeMaker.TYPE_NORMAL);
                     int normalViewStartPosition = position - typeManager.getRefreshControllerCount() - typeManager.getHeaderCount();
                     commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(normalViewStartPosition), parent, false));
+                    commonViewHolder.setIsRecyclable(true);
                     break;
                 case MultiTypeMaker.TYPE_FOOTER:        //脚布局
                     multiTypeMaker = typeManager.getFooter(position - mNormalData.size() - refreshControllerCount - headerCount);
                     multiTypeMaker.setType(MultiTypeMaker.TYPE_FOOTER);
                     commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(0), parent, false));
+                    commonViewHolder.setIsRecyclable(false);
                     break;
                 default:
                     break;

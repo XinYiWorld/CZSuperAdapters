@@ -30,21 +30,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0aa03cab2c1e8a0cf4bb2ad5dca2c69a343b6e56">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\DevWork\Tools\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_007299f7c8b9cb88ddaa5ad5b73b009c61046b61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1d49bfc65ec73c3f023dd9b5a9d64e76e5b1d33b">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0.jar" />
     </item>
     <item
         is-multidex="false"
@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="172d0cdeb8587c1f669d481c73305751523e260f">
+        sha1="87e48696470630c86ae5e92acc2c2f048241f858">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run_60d903a5ac4a67793fcd4d56d51422b5ef47640f.jar" />
     </item>
 

@@ -93,7 +93,7 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
             CommonViewHolder commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(0), parent, false));
             commonViewHolder.setParent(parent);
             commonViewHolder.setMultiTypeMaker(multiTypeMaker);
-            commonViewHolder.setIsRecyclable(false);
+//            commonViewHolder.setIsRecyclable(false);
             return commonViewHolder;
         } else {  //viewType就是position了(****************************注意要兼容刷新和加载更多没有情况****************************)
             int position = viewType;

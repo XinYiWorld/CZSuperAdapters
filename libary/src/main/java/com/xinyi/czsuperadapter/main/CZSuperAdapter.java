@@ -93,6 +93,7 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
             CommonViewHolder commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(0), parent, false));
             commonViewHolder.setParent(parent);
             commonViewHolder.setMultiTypeMaker(multiTypeMaker);
+            commonViewHolder.setIsRecyclable(false);
             return commonViewHolder;
         } else {  //viewType就是position了(****************************注意要兼容刷新和加载更多没有情况****************************)
             int position = viewType;
@@ -105,7 +106,7 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                     multiTypeMaker = typeManager.getHeader(position - refreshControllerCount);
                     multiTypeMaker.setType(MultiTypeMaker.TYPE_HEADER);
                     commonViewHolder = new CommonViewHolder(LayoutInflater.from(mContext).inflate(multiTypeMaker.getLayoutId(0), parent, false));
-//                    commonViewHolder.setIsRecyclable(false);
+                    commonViewHolder.setIsRecyclable(false);
                     break;
                 case MultiTypeMaker.TYPE_NORMAL:        //主体布局
                     multiTypeMaker = mNormalTypeMaker;
@@ -137,16 +138,12 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
         CommonViewHolder commonViewHolder = (CommonViewHolder) holder;
         MultiTypeMaker multiTypeMaker = commonViewHolder.getMultiTypeMaker();
         int normalViewStartPosition = position - typeManager.getRefreshControllerCount() - typeManager.getHeaderCount();
-        switch (/*multiTypeMaker.getType()*/getViewHolderType(getItemViewType(position))){
+        switch (multiTypeMaker.getType()/*getViewHolderType(getItemViewType(position))*/){
             case MultiTypeMaker.TYPE_HEADER:        //头布局
                 multiTypeMaker = typeManager.getHeader(position - refreshControllerCount);
                 multiTypeMaker.bindViewHolder(commonViewHolder, multiTypeMaker.getData(), MultiTypeMaker.TYPE_HEADER, position - refreshControllerCount);
                 break;
             case MultiTypeMaker.TYPE_NORMAL:        //主体布局
-                if(multiTypeMaker.getType() == MultiTypeMaker.TYPE_FOOTER){     //TODO 有可能复用的还是脚布局。multiTypeMaker就是footer,holder的view也是footer的view。
-//                    multiTypeMaker = mNormalTypeMaker;
-                    onCreateViewHolder(commonViewHolder.getParent(),getItemViewType(position));
-                }
                 multiTypeMaker.bindViewHolder((CommonViewHolder) holder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
                 break;
             case MultiTypeMaker.TYPE_FOOTER:        //脚布局 (有可能被主体数据利用了)

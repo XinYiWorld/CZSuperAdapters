@@ -3,30 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.0_6f29b228d0c8d4bda6db884b26681b30031f32ca.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="aee64634871d88a419d59eb743c1258a60f19700">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.0_fc720b207564ae0329d6192b39439213fa704379.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.0_9996a40e77e9cceaae41419eae905d88ad451cc1.jar" />
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -39,6 +21,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.0_fc720b207564ae0329d6192b39439213fa704379.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0aa03cab2c1e8a0cf4bb2ad5dca2c69a343b6e56">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\DevWork\Tools\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
         jumboMode="true"
         optimize="true"
@@ -48,12 +48,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="05f4e03ccf40fe8d9400e71e108a6851ca21714a">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0.jar" />
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.0_9996a40e77e9cceaae41419eae905d88ad451cc1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -61,71 +61,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="99a80147a18abddd4b540343cc9f53322296095b">
+        sha1="172d0cdeb8587c1f669d481c73305751523e260f">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run_60d903a5ac4a67793fcd4d56d51422b5ef47640f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.0_4cac765d506f213bff6cdbf96381b3c6e44bc3a6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.0_1bdfdbcbe2946f9a176293adcbd74c8268cde429.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.0_b6ee4fc072b4bca7a1971a251ab5f5171fe23c9f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.0_595459b5915f3811e286ba6f58fd97bc7329bd96.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.0_8ca860d3f276480dcbde1e4597ffe0ec5c8b2e6c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.0_7b2fe7df3d940ebab15f9c831ecea58433a81132.jar" />
     </item>
 
 </items>

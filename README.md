@@ -184,5 +184,6 @@ loadController = new LoadController.Builder().setOnLoaderListener(new LoaderList
 * QQ邮箱:1349308479@qq.com
 
 ## Reward me (打赏)
-  If you think it's helpful for you,you can reward me to show your encourage.(如果你觉得有用可以对我打赏以示鼓励)
+  If you think it's helpful for you,you can reward me to show your encourage.(如果你觉得有用可以对我打赏以示鼓励)<br/>
+  ![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/wx.png)
   

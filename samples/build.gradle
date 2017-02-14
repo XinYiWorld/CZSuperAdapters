@@ -6,11 +6,10 @@ android {
 
     defaultConfig {
         applicationId "xinyi.com.samples"
-        minSdkVersion 14
+        minSdkVersion 9
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -23,6 +22,5 @@ android {
 }
 
 dependencies {
-//    compile project(':libary')
-    compile 'com.github.XinYiWorld:CZSuperAdapters:1.0.2'
+    compile project(':libary')
 }

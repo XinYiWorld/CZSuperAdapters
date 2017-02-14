@@ -12,15 +12,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.github.XinYiWorld\CZSuperAdapters\1.0.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7be886719d7f7d0e5be86700f8bcfd316be124aa">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.github.XinYiWorld-CZSuperAdapters-1.0.2_88217120d5dc683c71ac09d72f388953906f7a2d.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -52,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="7137f12df91ee8fc8bc1036e647d7ba80e16a857">
+        sha1="a8a920754e561713dd94a384c9e80abc978e3b3e">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0.jar" />
     </item>
     <item
@@ -70,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="9145598167ad286fa3ffb9a18f70f20e56f9c145">
+        sha1="1a78a8258d760d3157222a45f85acb1e9be668e1">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\instant-run_60d903a5ac4a67793fcd4d56d51422b5ef47640f.jar" />
     </item>
 

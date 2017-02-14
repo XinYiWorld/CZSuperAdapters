@@ -23,6 +23,6 @@ android {
 }
 
 dependencies {
-    compile project(':libary')
-//    compile 'com.github.XinYiWorld:CZSuperAdapters:1.0.1'
+//    compile project(':libary')
+    compile 'com.github.XinYiWorld:CZSuperAdapters:1.0.2'
 }

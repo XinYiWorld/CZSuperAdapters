@@ -97,6 +97,11 @@ public abstract class ICRUDAdapter<T> extends RecyclerView.Adapter implements IC
         return mNormalData.size();
     }
 
+    @Override
+    public List<T> getNormalData() {
+        return mNormalData;
+    }
+
     public void setAutoNotify(boolean autoNotify) {
         this.autoNotify = autoNotify;
     }
@@ -112,5 +117,6 @@ public abstract class ICRUDAdapter<T> extends RecyclerView.Adapter implements IC
             notifyItemInserted(position);
         }
     }
+
 
 }

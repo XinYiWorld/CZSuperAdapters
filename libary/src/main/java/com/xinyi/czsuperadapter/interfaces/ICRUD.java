@@ -1,6 +1,7 @@
 package com.xinyi.czsuperadapter.interfaces;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by 陈章 on 2016/11/30 0030.
@@ -36,4 +37,6 @@ public interface ICRUD<T>{
     void remove(int i);
 
     int size();
+
+    List<T> getNormalData();
 }

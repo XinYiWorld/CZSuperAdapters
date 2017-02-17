@@ -51,6 +51,8 @@ public class RefreshController implements IBindTypeMaker {
         }
     }
 
+
+
     //定制刷新的一些样式等
     public static class Builder {
         RefreshListener mRefreshListener;

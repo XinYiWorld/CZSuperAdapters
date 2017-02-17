@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:text="点击加载更多"
         android:gravity="center"
-        android:textSize="17sp"
         />
     <LinearLayout
         android:id="@+id/ll_loading"

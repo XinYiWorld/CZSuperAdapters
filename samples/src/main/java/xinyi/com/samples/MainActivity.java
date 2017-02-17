@@ -82,18 +82,18 @@ public class MainActivity extends Activity {
         }
         mAdapter.addAll(temp);
         recyclerView.setAdapter(mAdapter);
-        recyclerView.requestLayout();
+//        recyclerView.requestLayout();
 
 
         refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
             @Override
             public void onRefresh() {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
                         refreshController.finishRefresh();
-                    }
-                }, 1000);
+//                    }
+//                }, 1000);
             }
 
             @Override
@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
                             loadController.finishLoadMore(true);
                         }
                     }
-                }, 2000);
+                }, 1000);
             }
         })
                 .setLoadIndicatorStyle(AVLoadingIndicatorView.Pacman)
@@ -132,89 +132,89 @@ public class MainActivity extends Activity {
 
         mAdapter.setLoadController(loadController);
 
-
-        MultiTypeMaker header1 = new MultiTypeMaker<String>() {
-            @Override
-            public int getType(int position) {
-                return 0;
-            }
-
-            @Override
-            public int getLayoutId(int viewType) {
-                return  R.layout.simple_item_view_header;
-            }
-
-            @Override
-            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(R.id.tv_header);
-
-                text1.setText(data);
-            }
-        };
-        header1.setData("我是头q1");
-        mAdapter.addHeader(header1);
-
-        MultiTypeMaker header2 = new MultiTypeMaker<String>() {
-            @Override
-            public int getType(int position) {
-                return 0;
-            }
-
-            @Override
-            public int getLayoutId(int viewType) {
-                return R.layout.simple_item_view_header;
-            }
-
-            @Override
-            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(R.id.tv_header);
-                text1.setText(data);
-            }
-        };
-        header2.setData("我是头q2");
-        mAdapter.addHeader(header2);
-
-
-        MultiTypeMaker footerTypeMaker = new MultiTypeMaker<String>() {
-            @Override
-            public int getType(int position) {
-                return 0;
-            }
-
-            @Override
-            public int getLayoutId(int viewType) {
-                return  R.layout.simple_item_view_footer;
-            }
-
-            @Override
-            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(R.id.tv_footer);
-                text1.setText(data);
-            }
-
-        };
-        footerTypeMaker.setData("我是脚1。。。");
-        mAdapter.addFooter(footerTypeMaker);
-
-        MultiTypeMaker footerTypeMaker2 = new MultiTypeMaker<String>() {
-            @Override
-            public int getType(int position) {
-                return 0;
-            }
-
-            @Override
-            public int getLayoutId(int viewType) {
-                return  R.layout.simple_item_view_footer;
-            }
-
-            @Override
-            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
-                TextView text1 = holder.findViewById(R.id.tv_footer);
-                text1.setText(data);
-            }
-
-        };
-        footerTypeMaker2.setData("我是脚2。。。");
-        mAdapter.addFooter(footerTypeMaker2);
+//
+//        MultiTypeMaker header1 = new MultiTypeMaker<String>() {
+//            @Override
+//            public int getType(int position) {
+//                return 0;
+//            }
+//
+//            @Override
+//            public int getLayoutId(int viewType) {
+//                return  R.layout.simple_item_view_header;
+//            }
+//
+//            @Override
+//            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
+//                TextView text1 = holder.findViewById(R.id.tv_header);
+//
+//                text1.setText(data);
+//            }
+//        };
+//        header1.setData("我是头q1");
+//        mAdapter.addHeader(header1);
+//
+//        MultiTypeMaker header2 = new MultiTypeMaker<String>() {
+//            @Override
+//            public int getType(int position) {
+//                return 0;
+//            }
+//
+//            @Override
+//            public int getLayoutId(int viewType) {
+//                return R.layout.simple_item_view_header;
+//            }
+//
+//            @Override
+//            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
+//                TextView text1 = holder.findViewById(R.id.tv_header);
+//                text1.setText(data);
+//            }
+//        };
+//        header2.setData("我是头q2");
+//        mAdapter.addHeader(header2);
+//
+//
+//        MultiTypeMaker footerTypeMaker = new MultiTypeMaker<String>() {
+//            @Override
+//            public int getType(int position) {
+//                return 0;
+//            }
+//
+//            @Override
+//            public int getLayoutId(int viewType) {
+//                return  R.layout.simple_item_view_footer;
+//            }
+//
+//            @Override
+//            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
+//                TextView text1 = holder.findViewById(R.id.tv_footer);
+//                text1.setText(data);
+//            }
+//
+//        };
+//        footerTypeMaker.setData("我是脚1。。。");
+//        mAdapter.addFooter(footerTypeMaker);
+//
+//        MultiTypeMaker footerTypeMaker2 = new MultiTypeMaker<String>() {
+//            @Override
+//            public int getType(int position) {
+//                return 0;
+//            }
+//
+//            @Override
+//            public int getLayoutId(int viewType) {
+//                return  R.layout.simple_item_view_footer;
+//            }
+//
+//            @Override
+//            public void bindViewHolder(CommonViewHolder holder, String data, int viewType, int position) {
+//                TextView text1 = holder.findViewById(R.id.tv_footer);
+//                text1.setText(data);
+//            }
+//
+//        };
+//        footerTypeMaker2.setData("我是脚2。。。");
+//        mAdapter.addFooter(footerTypeMaker2);
     }
 }

@@ -108,6 +108,11 @@ public class LoadTypeMaker extends MultiTypeMaker implements ILoad, ILoadControl
                     if(lockObserver.isRefreshing()) return;
                     if (getLoadMode() == LoadMode.CLICK_TO_LOAD) return;
 
+                    if (mLoaderListener != null) {
+                        mLoaderListener.onScrollStateChanged(newState);
+                    }
+
+
                     //判断是否最后一item个显示出来
                     RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
 

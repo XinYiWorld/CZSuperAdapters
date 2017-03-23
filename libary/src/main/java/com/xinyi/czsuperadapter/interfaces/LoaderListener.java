@@ -14,4 +14,7 @@ public interface LoaderListener {
      * @param detY  向上滑动为正，向下滑动为负。
      */
     void onScroll(int detX,int detY) ;       //获取滚动的方向及距离
+
+    void onScrollStateChanged(int newState);    //获取滚动的状态
+
 }

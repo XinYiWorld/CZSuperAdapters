@@ -127,6 +127,11 @@ public class MainActivity extends Activity {
             public void onScroll(int detX, int detY) {
                 Log.i(TAG, "onScroll: dety = " + detY);
             }
+
+            @Override
+            public void onScrollStateChanged(int newState) {
+
+            }
         })
                 .setLoadIndicatorStyle(AVLoadingIndicatorView.Pacman)
                 .setLoadIndicatorColor(Color.GREEN)

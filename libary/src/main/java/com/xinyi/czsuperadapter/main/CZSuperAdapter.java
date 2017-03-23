@@ -1,7 +1,6 @@
 package com.xinyi.czsuperadapter.main;
 
 import android.content.Context;
-import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,6 +27,22 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
     private MultiTypeMaker mNormalTypeMaker;
     private final LockObserver lockObserver;
     private final TypeManager typeManager;
+
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        this.recyclerView = recyclerView;
+    }
+
+    //通过onAttachedToRecyclerView即可获得RecyclerView的引用 ，不需要传入RecyclerView参数，但兼容旧代码，不删除旧的构造方法。
+    public CZSuperAdapter(Context mContext , MultiTypeMaker mNormalTypeMaker) {
+        super(mContext);
+        this.mNormalTypeMaker = mNormalTypeMaker;
+        mNormalTypeMaker.setType(MultiTypeMaker.TYPE_NORMAL);
+        lockObserver = new LockObserver();                  //解决刷新与加载更多冲突
+        typeManager = new TypeManager();                    //管理视图
+    }
+
 
     public CZSuperAdapter(Context mContext, RecyclerView recyclerView, MultiTypeMaker mNormalTypeMaker) {
         super(mContext);

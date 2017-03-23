@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="73540214c88fb7ec04d35d0f98b4c173332f4402">
+        sha1="0235d081da2159d1ce976d4b2cd936414b0f951a">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_60d903a5ac4a67793fcd4d56d51422b5ef47640f\classes.dex" />
     </item>
     <item
@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="39a98c0f771a8e32ea8f21526cb1218793eba82c">
+        sha1="cd6fad6f7329176c73ad75298d55c4302c7acf00">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0\classes.dex" />
     </item>
     <item

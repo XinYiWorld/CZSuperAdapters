@@ -96,6 +96,9 @@ public class LoadTypeMaker extends MultiTypeMaker implements ILoad, ILoadControl
                 public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                     super.onScrolled(recyclerView, dx, dy);
                     scrollDetY = dy;
+                    if (mLoaderListener != null) {
+                        mLoaderListener.onScroll(dx,dy);
+                    }
                 }
 
                 @Override

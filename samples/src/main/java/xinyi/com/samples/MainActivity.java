@@ -2,16 +2,14 @@ package xinyi.com.samples;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.os.Handler;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import com.xinyi.czsuperadapter.AVLoadingIndicatorView;
-import com.xinyi.czsuperadapter.interfaces.LoadMode;
 import com.xinyi.czsuperadapter.interfaces.LoaderListener;
 import com.xinyi.czsuperadapter.interfaces.RefreshListener;
 import com.xinyi.czsuperadapter.main.CZSuperAdapter;
@@ -123,6 +121,11 @@ public class MainActivity extends Activity {
                         }
                     }
                 }, 1000);
+            }
+
+            @Override
+            public void onScroll(int detX, int detY) {
+                Log.i(TAG, "onScroll: dety = " + detY);
             }
         })
                 .setLoadIndicatorStyle(AVLoadingIndicatorView.Pacman)

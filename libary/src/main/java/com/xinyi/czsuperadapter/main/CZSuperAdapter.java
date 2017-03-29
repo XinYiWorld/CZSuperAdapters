@@ -28,6 +28,9 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
     private final LockObserver lockObserver;
     private final TypeManager typeManager;
 
+    private CommonViewHolder.OnItemClickListener onItemClickListener;
+    private CommonViewHolder.OnItemLongClickListener onItemLongClickListener;
+
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
@@ -159,7 +162,14 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                 multiTypeMaker.bindViewHolder(commonViewHolder, multiTypeMaker.getData(), MultiTypeMaker.TYPE_HEADER, position - refreshControllerCount);
                 break;
             case MultiTypeMaker.TYPE_NORMAL:        //主体布局
-                multiTypeMaker.bindViewHolder((CommonViewHolder) holder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
+                multiTypeMaker.bindViewHolder(commonViewHolder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
+                //绑定点击事件
+                if(onItemClickListener != null){
+                    commonViewHolder.setOnItemClickListener(onItemClickListener,normalViewStartPosition);
+                }
+                if(onItemLongClickListener != null){
+                    commonViewHolder.setOnItemLongClickListener(onItemLongClickListener,normalViewStartPosition);
+                }
                 break;
             case MultiTypeMaker.TYPE_FOOTER:        //脚布局 (有可能被主体数据利用了)
                 multiTypeMaker = typeManager.getFooter(position - mNormalData.size() - refreshControllerCount - headerCount);
@@ -272,5 +282,26 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
             myNotify();
         }
         return success;
+    }
+
+
+
+    /**
+     * set the on item click listener
+     * 设置Item的点击事件
+     * @param listener listener
+     */
+    public void setOnItemClickListener(final CommonViewHolder.OnItemClickListener listener ) {
+        this.onItemClickListener = listener;
+    }
+
+
+    /**
+     * set the on item long click listener
+     * 设置Item的长点击事件
+     * @param listener listener
+     */
+    public void setOnItemLongClickListener(final CommonViewHolder.OnItemLongClickListener listener) {
+        this.onItemLongClickListener = listener;
     }
 }

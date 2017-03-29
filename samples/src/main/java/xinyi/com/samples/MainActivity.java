@@ -7,7 +7,9 @@ import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.xinyi.czsuperadapter.AVLoadingIndicatorView;
 import com.xinyi.czsuperadapter.interfaces.LoaderListener;
@@ -67,6 +69,24 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
+        mAdapter.setOnItemClickListener(new CommonViewHolder.OnItemClickListener() {
+            @Override
+            public void onItemClick(View convertView, int position) {
+                Toast.makeText(MainActivity.this, position + "", Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "onItemClick: " +  position);
+            }
+        });
+
+        mAdapter.setOnItemLongClickListener(new CommonViewHolder.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(View convertView, int position) {
+                Toast.makeText(MainActivity.this, position + "", Toast.LENGTH_SHORT).show();
+                Log.i(TAG, "onItemLongClick: " + position);
+                return true;
+            }
+        });
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         // set divider
         DividerLine dividerLine = new DividerLine(DividerLine.VERTICAL);

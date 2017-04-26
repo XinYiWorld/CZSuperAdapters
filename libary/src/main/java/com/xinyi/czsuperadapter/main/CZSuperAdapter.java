@@ -162,6 +162,7 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                 multiTypeMaker.bindViewHolder(commonViewHolder, multiTypeMaker.getData(), MultiTypeMaker.TYPE_HEADER, position - refreshControllerCount);
                 break;
             case MultiTypeMaker.TYPE_NORMAL:        //主体布局
+                if(mNormalData.isEmpty()) break;
                 multiTypeMaker.bindViewHolder(commonViewHolder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
                 //绑定点击事件
                 if(onItemClickListener != null){

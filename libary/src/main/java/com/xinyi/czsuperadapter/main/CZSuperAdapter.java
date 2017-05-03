@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.xinyi.czsuperadapter.ICRUDAdapter;
@@ -162,7 +163,12 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                 multiTypeMaker.bindViewHolder(commonViewHolder, multiTypeMaker.getData(), MultiTypeMaker.TYPE_HEADER, position - refreshControllerCount);
                 break;
             case MultiTypeMaker.TYPE_NORMAL:        //主体布局
-                if(mNormalData.isEmpty()) break;
+                if(mNormalData.isEmpty()) {
+                    ((CommonViewHolder) holder).getParent().setVisibility(View.GONE);
+                    break;
+                }
+                ((CommonViewHolder) holder).getParent().setVisibility(View.VISIBLE);
+
                 multiTypeMaker.bindViewHolder(commonViewHolder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
                 //绑定点击事件
                 if(onItemClickListener != null){

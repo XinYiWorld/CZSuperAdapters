@@ -88,7 +88,7 @@ public class RefreshTypeMaker extends MultiTypeMaker implements IRefresh {
         this.recyclerView = recyclerView;
         if(touchListener == null ){
             touchListener = new View.OnTouchListener() {
-                private float startY;
+                private float startY = -1;
 
                 @Override
                 public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -102,6 +102,7 @@ public class RefreshTypeMaker extends MultiTypeMaker implements IRefresh {
                         setRefreshingState(mRefreshingStateNode.set(RefreshingState.NONE, RefreshingState.PULL_TO_REFRESH));
                     } else if (action == MotionEvent.ACTION_MOVE) {
                         float currentY = motionEvent.getY();
+                        if(startY == -1) startY = currentY;         //防止直接走了move没有走down事件，导致startY为0.
                         double detY = currentY - startY;
                         if(detY < 0 && refreshViewHolder.ll_root.getPaddingTop()<=-originalRefreshViewHeight){  //如果一开始就向上滑动，默认是加载更多。（*****************************************）
                             Log.i(TAG, "onTouch: 加载更多");

@@ -19,7 +19,7 @@ allprojects {
 ```Groovy
 dependencies {
     ...
-    compile 'com.github.XinYiWorld:CZSuperAdapters:1.0.2'
+    compile 'com.github.XinYiWorld:CZSuperAdapters:1.2.1'
 }
 ```
 

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.xinyi.czsuperadapter.AVLoadingIndicatorView;
 import com.xinyi.czsuperadapter.interfaces.LoaderListener;
+import com.xinyi.czsuperadapter.interfaces.RefreshListener;
 import com.xinyi.czsuperadapter.main.CZSuperAdapter;
 import com.xinyi.czsuperadapter.main.CommonViewHolder;
 import com.xinyi.czsuperadapter.main.LoadController;
@@ -102,27 +103,27 @@ public class MainActivity extends Activity {
 //        recyclerView.requestLayout();
 
 
-//        refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
-//            @Override
-//            public void onRefresh() {
-////                handler.postDelayed(new Runnable() {
-////                    @Override
-////                    public void run() {
-//                        refreshController.finishRefresh();
-////                    }
-////                }, 1000);
-//            }
-//
-//            @Override
-//            public void onPull(int distance) {
-//
-//            }
-//        })
-//                .setRefreshIndicatorStyle(AVLoadingIndicatorView.Pacman)
-//                .setRefreshIndicatorColor(Color.RED)
-//                .build().create();
-//
-//        mAdapter.setRefreshController(refreshController);
+        refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
+            @Override
+            public void onRefresh() {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        refreshController.finishRefresh();
+                    }
+                }, 1000);
+            }
+
+            @Override
+            public void onPull(int distance) {
+
+            }
+        })
+                .setRefreshIndicatorStyle(AVLoadingIndicatorView.Pacman)
+                .setRefreshIndicatorColor(Color.RED)
+                .build().create();
+
+        mAdapter.setRefreshController(refreshController);
 
 
         loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {

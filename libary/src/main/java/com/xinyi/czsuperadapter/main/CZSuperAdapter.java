@@ -20,6 +20,8 @@ import com.xinyi.czsuperadapter.interfaces.IRemoveTypeMaker;
  *   复用多视图来实现刷新、加载更多、头、脚，最蛋痛的还是复用的问题。
  *  //TODO 复用的问题
  *    1》》使用setIsRecyclable(false)勉强可以解决复用的问题，但是影响性能。
+ * 3)在adapter里对recyclerView的item设置点击事件后，再对recyclerView本身设置touch事件时，捕捉不到Down这个action。
+ * 4）点击事件与刷新冲突（未解决）
  */
 
 public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,IRemoveTypeMaker {
@@ -160,6 +162,8 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
         switch (multiTypeMaker.getType()/*getViewHolderType(getItemViewType(position))*/){
             case MultiTypeMaker.TYPE_HEADER:        //头布局
                 multiTypeMaker = typeManager.getHeader(position - refreshControllerCount);
+                commonViewHolder.setOnItemClickListener(null,position - refreshControllerCount);
+                commonViewHolder.setOnItemLongClickListener(null,position - refreshControllerCount);
                 multiTypeMaker.bindViewHolder(commonViewHolder, multiTypeMaker.getData(), MultiTypeMaker.TYPE_HEADER, position - refreshControllerCount);
                 break;
             case MultiTypeMaker.TYPE_NORMAL:        //主体布局
@@ -169,7 +173,6 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                 }
                 ((CommonViewHolder) holder).getParent().setVisibility(View.VISIBLE);
 
-                multiTypeMaker.bindViewHolder(commonViewHolder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
                 //绑定点击事件
                 if(onItemClickListener != null){
                     commonViewHolder.setOnItemClickListener(onItemClickListener,normalViewStartPosition);
@@ -177,12 +180,17 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
                 if(onItemLongClickListener != null){
                     commonViewHolder.setOnItemLongClickListener(onItemLongClickListener,normalViewStartPosition);
                 }
+                multiTypeMaker.bindViewHolder(commonViewHolder, mNormalData.get(normalViewStartPosition), multiTypeMaker.getType(normalViewStartPosition), normalViewStartPosition);
                 break;
             case MultiTypeMaker.TYPE_FOOTER:        //脚布局 (有可能被主体数据利用了)
                 multiTypeMaker = typeManager.getFooter(position - mNormalData.size() - refreshControllerCount - headerCount);
+                commonViewHolder.setOnItemClickListener(null,position - mNormalData.size() - refreshControllerCount - headerCount);
+                commonViewHolder.setOnItemLongClickListener(null,position - mNormalData.size() - refreshControllerCount - headerCount);
                 multiTypeMaker.bindViewHolder(commonViewHolder,multiTypeMaker.getData(),MultiTypeMaker.TYPE_FOOTER,position - mNormalData.size() - refreshControllerCount - headerCount);
                 break;
             default:        //刷新或加载更多
+                commonViewHolder.setOnItemClickListener(null,position);
+                commonViewHolder.setOnItemLongClickListener(null,position);
                 multiTypeMaker.bindViewHolder(commonViewHolder, null, multiTypeMaker.getType(position), position);
                 break;
         }

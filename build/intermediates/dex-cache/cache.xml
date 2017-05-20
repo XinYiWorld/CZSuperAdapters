@@ -12,11 +12,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="80c5630e1d3b8a7e0bce8e2839319479fc80c0b0">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="b873dfdf30423ebb20181d97d64772807ad21937">
+        sha1="d8a1442e05e8e10607709e144ad2c89f0ae15490">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_60d903a5ac4a67793fcd4d56d51422b5ef47640f\classes.dex" />
     </item>
     <item
@@ -45,15 +54,6 @@
         revision="25.0.1"
         sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
         <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_327d204468bb6e0873099977df3d5631e66fde02\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4fb2dab7b9936fc91b1ef6bd798a3029e0a33485">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0\classes.dex" />
     </item>
     <item
         is-multidex="true"

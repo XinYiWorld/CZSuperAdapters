@@ -136,6 +136,8 @@ public class RefreshTypeMaker extends MultiTypeMaker implements IRefresh {
                         } else {
                             if (mRefreshingState == RefreshingState.RELEASE_TO_REFRESH) {         //防止箭头反复旋转
                                 setRefreshingState(mRefreshingStateNode.set(RefreshingState.RELEASE_TO_REFRESH, RefreshingState.PULL_TO_REFRESH));
+                            }else if(mRefreshingState == RefreshingState.NONE){     //一定要加这个从NONE到PULL_TO_REFRESH刷新的状态转换
+                                setRefreshingState(mRefreshingStateNode.set(RefreshingState.NONE, RefreshingState.PULL_TO_REFRESH));
                             }
                         }
                         startY = currentY;  //注意起点的传递

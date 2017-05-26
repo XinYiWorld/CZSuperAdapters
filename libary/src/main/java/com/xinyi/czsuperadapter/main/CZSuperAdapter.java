@@ -28,8 +28,8 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
     private static final String TAG = "CZSuperAdapter";
     private RecyclerView recyclerView;
     private MultiTypeMaker mNormalTypeMaker;
-    private final LockObserver lockObserver;
-    private final TypeManager typeManager;
+    private  LockObserver lockObserver;
+    private  TypeManager typeManager;
 
     private CommonViewHolder.OnItemClickListener onItemClickListener;
     private CommonViewHolder.OnItemLongClickListener onItemLongClickListener;
@@ -39,6 +39,19 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
         super.onAttachedToRecyclerView(recyclerView);
         this.recyclerView = recyclerView;
     }
+
+    //-----------将构造方法分为2部分，解决Cannot reference this before supertype constructor has been called的问题 -----------------------------------------------------------------------
+    public CZSuperAdapter(Context mContext) {
+        super(mContext);
+    }
+
+    public void setmNormalTypeMaker(MultiTypeMaker mNormalTypeMaker) {
+        this.mNormalTypeMaker = mNormalTypeMaker;
+        mNormalTypeMaker.setType(MultiTypeMaker.TYPE_NORMAL);
+        lockObserver = new LockObserver();                  //解决刷新与加载更多冲突
+        typeManager = new TypeManager();                    //管理视图
+    }
+    //----------------------------------------------------------------------------------
 
     //通过onAttachedToRecyclerView即可获得RecyclerView的引用 ，不需要传入RecyclerView参数，但兼容旧代码，不删除旧的构造方法。
     public CZSuperAdapter(Context mContext , MultiTypeMaker mNormalTypeMaker) {

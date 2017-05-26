@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.xinyi.czsuperadapter.ICRUDAdapter;
 import com.xinyi.czsuperadapter.interfaces.IAddTypeMaker;
+import com.xinyi.czsuperadapter.interfaces.IMemoryPosition;
 import com.xinyi.czsuperadapter.interfaces.IRemoveTypeMaker;
 
 /**
@@ -24,7 +25,7 @@ import com.xinyi.czsuperadapter.interfaces.IRemoveTypeMaker;
  * 4）点击事件与刷新冲突（未解决）
  */
 
-public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,IRemoveTypeMaker {
+public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,IRemoveTypeMaker,IMemoryPosition {
     private static final String TAG = "CZSuperAdapter";
     private RecyclerView recyclerView;
     private MultiTypeMaker mNormalTypeMaker;
@@ -33,6 +34,11 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
 
     private CommonViewHolder.OnItemClickListener onItemClickListener;
     private CommonViewHolder.OnItemLongClickListener onItemLongClickListener;
+
+
+    //记忆位置
+    private int previousSelectPosition = -1;
+
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
@@ -331,5 +337,22 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
      */
     public void setOnItemLongClickListener(final CommonViewHolder.OnItemLongClickListener listener) {
         this.onItemLongClickListener = listener;
+    }
+
+    //记忆位置(默认调用mNormalTypeMaker的方法，后期调用根据项目需求可以复写。)
+    @Override
+    public int getPreviousSelectPosition() {
+        return mNormalTypeMaker.getPreviousSelectPosition();
+    }
+
+    @Override
+    public void setPreviousSelectPosition(int previousSelectPosition) {
+        this.previousSelectPosition = previousSelectPosition;
+        mNormalTypeMaker.setPreviousSelectPosition(previousSelectPosition);
+    }
+
+    @Override
+    public void selectPosition(final int position){
+        mNormalTypeMaker.selectPosition(position);
     }
 }

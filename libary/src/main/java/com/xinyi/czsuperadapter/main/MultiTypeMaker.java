@@ -3,13 +3,14 @@ package com.xinyi.czsuperadapter.main;
 import android.support.v7.widget.RecyclerView;
 
 import com.xinyi.czsuperadapter.interfaces.IBindRecyclerView;
+import com.xinyi.czsuperadapter.interfaces.IMemoryPosition;
 
 /**
  * Created by 陈章 on 2016/12/20 0020.
  * func:
  */
 
-public abstract  class MultiTypeMaker<T> implements IBindRecyclerView {
+public abstract  class MultiTypeMaker<T> implements IBindRecyclerView ,IMemoryPosition{
     public static final int TYPE_REFRESH = 1001;            //下拉刷新
     public static final int  TYPE_HEADER = 1002;            //头布局
     public static final int  TYPE_FOOTER = 1003;            //脚布局
@@ -21,6 +22,11 @@ public abstract  class MultiTypeMaker<T> implements IBindRecyclerView {
     protected  LockObserver lockObserver;
     private int type;
     private T data;
+
+
+    //记忆位置
+    private int previousSelectPosition = -1;
+
 
     public abstract int getType(int position);
     public abstract int getLayoutId(int viewType);
@@ -68,5 +74,20 @@ public abstract  class MultiTypeMaker<T> implements IBindRecyclerView {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    @Override
+    public int getPreviousSelectPosition() {
+        return previousSelectPosition;
+    }
+
+    @Override
+    public void setPreviousSelectPosition(int previousSelectPosition) {
+        this.previousSelectPosition = previousSelectPosition;
+    }
+
+    @Override
+    public void selectPosition(final int position){
+
     }
 }

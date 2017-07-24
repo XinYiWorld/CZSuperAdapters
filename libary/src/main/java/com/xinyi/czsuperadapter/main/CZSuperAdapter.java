@@ -1,7 +1,9 @@
 package com.xinyi.czsuperadapter.main;
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +24,9 @@ import com.xinyi.czsuperadapter.interfaces.IRemoveTypeMaker;
  *  //TODO 复用的问题
  *    1》》使用setIsRecyclable(false)勉强可以解决复用的问题，但是影响性能。
  * 3)在adapter里对recyclerView的item设置点击事件后，再对recyclerView本身设置touch事件时，捕捉不到Down这个action。
- * 4）点击事件与刷新冲突（未解决）
+ * 4）点击事件与刷新冲突（已经解决）
+ * 5)http://blog.csdn.net/qibin0506/article/details/49716795 完美兼容GridLayoutManager添加刷新、加载更多、头、脚的功能。（StaggeredGridLayoutManager的有问题）
+ *
  */
 
 public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,IRemoveTypeMaker,IMemoryPosition {
@@ -38,12 +42,65 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
 
     //记忆位置
     private int previousSelectPosition = -1;
+    private RecyclerView.LayoutManager layoutManager;
 
 
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         this.recyclerView = recyclerView;
+        layoutManager = recyclerView.getLayoutManager();
+        // 使刷新、加载更多、头、脚 跨一行，兼容GridLayoutManager
+        if(layoutManager instanceof GridLayoutManager){
+            final GridLayoutManager gridLayoutManager = (GridLayoutManager) this.layoutManager;
+            gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+                @Override
+                public int getSpanSize(int position) {
+                    int itemViewType = getViewHolderType(position);
+                    if(itemViewType == MultiTypeMaker.TYPE_REFRESH ||
+                            itemViewType == MultiTypeMaker.TYPE_LOADER ||
+                            itemViewType == MultiTypeMaker.TYPE_HEADER ||
+                            itemViewType == MultiTypeMaker.TYPE_FOOTER
+                            ){
+                            return gridLayoutManager.getSpanCount();
+                    }
+                    return 1;
+                }
+            });
+        }
+    }
+
+    /**
+     * 使刷新、加载更多、头、脚 跨一行，兼容StaggeredGridLayoutManager (目前，主体的兼容还有问题。)
+     * StaggeredGridLayoutManager
+     * @param holder
+     */
+    @Override
+    public void onViewAttachedToWindow(RecyclerView.ViewHolder holder) {
+        super.onViewAttachedToWindow(holder);
+        ViewGroup.LayoutParams lp = holder.itemView.getLayoutParams();
+        if(lp != null
+                && lp instanceof StaggeredGridLayoutManager.LayoutParams) {
+            StaggeredGridLayoutManager.LayoutParams p = (StaggeredGridLayoutManager.LayoutParams) lp;
+
+            int itemViewType = getViewHolderType(holder.getLayoutPosition());
+            if(itemViewType == MultiTypeMaker.TYPE_REFRESH){
+                Log.d(TAG, "onViewAttachedToWindow: TYPE_REFRESH");
+                p.setFullSpan(true);
+            }else if(itemViewType == MultiTypeMaker.TYPE_LOADER){
+                Log.d(TAG, "onViewAttachedToWindow: TYPE_LOADER");
+                p.setFullSpan(true);
+            }else if(itemViewType == MultiTypeMaker.TYPE_HEADER){
+                Log.d(TAG, "onViewAttachedToWindow: TYPE_HEADER");
+                p.setFullSpan(true);
+            }else  if(itemViewType == MultiTypeMaker.TYPE_FOOTER){
+                Log.d(TAG, "onViewAttachedToWindow: TYPE_FOOTER");
+                p.setFullSpan(true);
+            }else{
+                p.setFullSpan(false);
+            }
+
+        }
     }
 
     //-----------将构造方法分为2部分，解决Cannot reference this before supertype constructor has been called的问题 -----------------------------------------------------------------------
@@ -81,6 +138,15 @@ public class CZSuperAdapter<T> extends ICRUDAdapter<T> implements IAddTypeMaker,
     @Override
     public int getItemCount() {
         return mNormalData.size() + typeManager.getRefreshControllerCount() + typeManager.getLoadControllerCount() + typeManager.getHeaderCount() + typeManager.getFooterCount();
+
+//        if(layoutManager instanceof LinearLayoutManager){
+//            return mNormalData.size() + typeManager.getRefreshControllerCount() + typeManager.getLoadControllerCount() + typeManager.getHeaderCount() + typeManager.getFooterCount();
+//        }else if(layoutManager instanceof  GridLayoutManager){
+//            //对于GridLayoutManager,所有额外添加的view，都会占据1行。
+//            return mNormalData.size() + (typeManager.getRefreshControllerCount() + typeManager.getLoadControllerCount() + typeManager.getHeaderCount() + typeManager.getFooterCount()) *(((GridLayoutManager)layoutManager).getSpanCount()) ;
+//        }else{
+//            return -1;
+//        }
     }
 
     @Override

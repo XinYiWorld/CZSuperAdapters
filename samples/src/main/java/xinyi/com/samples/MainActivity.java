@@ -4,16 +4,14 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.xinyi.czsuperadapter.AVLoadingIndicatorView;
-import com.xinyi.czsuperadapter.interfaces.LoaderListener;
-import com.xinyi.czsuperadapter.interfaces.RefreshListener;
 import com.xinyi.czsuperadapter.main.CZSuperAdapter;
 import com.xinyi.czsuperadapter.main.CommonViewHolder;
 import com.xinyi.czsuperadapter.main.LoadController;
@@ -37,6 +35,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rcv);
+
 
         final CZSuperAdapter mAdapter = new CZSuperAdapter(this, recyclerView, new MultiTypeMaker<String>() {
             @Override
@@ -87,7 +86,9 @@ public class MainActivity extends Activity {
             }
         });
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        final GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 3);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
+
         // set divider
         DividerLine dividerLine = new DividerLine(DividerLine.VERTICAL);
         dividerLine.setSize(5);
@@ -103,63 +104,63 @@ public class MainActivity extends Activity {
 //        recyclerView.requestLayout();
 
 
-        refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
-            @Override
-            public void onRefresh() {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        refreshController.finishRefresh();
-                    }
-                }, 1000);
-            }
-
-            @Override
-            public void onPull(int distance) {
-
-            }
-        })
-                .setRefreshIndicatorStyle(AVLoadingIndicatorView.Pacman)
-                .setRefreshIndicatorColor(Color.RED)
-                .build().create();
-
-        mAdapter.setRefreshController(refreshController);
-
-
-        loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
-            @Override
-            public void onLoadMore() {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (mAdapter.size() > 15) {
-                            loadController.finishLoadMore(false);
-                        } else {
-                            mAdapter.add("我是加载更多的数据");
-                            recyclerView.requestLayout();
-                            loadController.finishLoadMore(true);
-                        }
-                    }
-                }, 1000);
-            }
-
-            @Override
-            public void onScroll(int detX, int detY) {
-                Log.i(TAG, "onScroll: dety = " + detY);
-            }
-
-            @Override
-            public void onScrollStateChanged(int newState) {
-
-            }
-        })
-                .setLoadIndicatorStyle(AVLoadingIndicatorView.Pacman)
-                .setLoadIndicatorColor(Color.GREEN)
-//                .setLoadMode(LoadMode.CLICK_TO_LOAD)
-                .build().create();
-
-        mAdapter.setLoadController(loadController);
-
+//        refreshController = new RefreshController.Builder().setOnRefreshListener(new RefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        refreshController.finishRefresh();
+//                    }
+//                }, 1000);
+//            }
+//
+//            @Override
+//            public void onPull(int distance) {
+//
+//            }
+//        })
+//                .setRefreshIndicatorStyle(AVLoadingIndicatorView.Pacman)
+//                .setRefreshIndicatorColor(Color.RED)
+//                .build().create();
+//
+//        mAdapter.setRefreshController(refreshController);
+////
+//
+//        loadController = new LoadController.Builder().setOnLoaderListener(new LoaderListener() {
+//            @Override
+//            public void onLoadMore() {
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        if (mAdapter.size() > 15) {
+//                            loadController.finishLoadMore(false);
+//                        } else {
+//                            mAdapter.add("我是加载更多的数据");
+//                            recyclerView.requestLayout();
+//                            loadController.finishLoadMore(true);
+//                        }
+//                    }
+//                }, 1000);
+//            }
+//
+//            @Override
+//            public void onScroll(int detX, int detY) {
+//                Log.i(TAG, "onScroll: dety = " + detY);
+//            }
+//
+//            @Override
+//            public void onScrollStateChanged(int newState) {
+//
+//            }
+//        })
+//                .setLoadIndicatorStyle(AVLoadingIndicatorView.Pacman)
+//                .setLoadIndicatorColor(Color.GREEN)
+////                .setLoadMode(LoadMode.CLICK_TO_LOAD)
+//                .build().create();
+//
+//        mAdapter.setLoadController(loadController);
+//
 //
 //        MultiTypeMaker header1 = new MultiTypeMaker<String>() {
 //            @Override

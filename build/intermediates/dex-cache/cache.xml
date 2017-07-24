@@ -2,67 +2,58 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="debf30ce0a7560396b6235edef77e447006454c2">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.3.0_067195f18b95e8375354eaab75ddc805bcfda521\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="80c5630e1d3b8a7e0bce8e2839319479fc80c0b0">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_481909628a2c2acfebcbebf06629022aa21c6af0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d8a1442e05e8e10607709e144ad2c89f0ae15490">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_60d903a5ac4a67793fcd4d56d51422b5ef47640f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="D:\DevWork\Tools\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.0_007299f7c8b9cb88ddaa5ad5b73b009c61046b61\classes.dex" />
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_007299f7c8b9cb88ddaa5ad5b73b009c61046b61.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_327d204468bb6e0873099977df3d5631e66fde02\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
-        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_0c04a5165a79671014130487e5e2e83ee0988248\classes.dex" />
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.3.0_0c04a5165a79671014130487e5e2e83ee0988248.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_327d204468bb6e0873099977df3d5631e66fde02.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.github.XinYiWorld\libary\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0a4d220dceefafb7bb39a57b6bfcc5e7f0b31ffd">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.github.XinYiWorld-libary-unspecified_beaf0ee5c50b89f9db11bf96addbab5e5ff09a5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\DevWork\Code\Demos\QD\PublishedCode\CZSuperAdapter\samples\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.3.0_067195f18b95e8375354eaab75ddc805bcfda521.jar" />
     </item>
 
 </items>

@@ -5,6 +5,7 @@ A super adapter for recyclerview,you can combine function part like refresh,load
 ## Results demonstrate (效果演示)
 1)线性布局
 ![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/result.gif)
+</br>
 2)表格布局
 ![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/grid_test.gif)
 ## Download (集成指南)

@@ -4,10 +4,12 @@ A super adapter for recyclerview,you can combine function part like refresh,load
 
 ## Results demonstrate (效果演示)
 1)线性布局
+</br>
 ![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/result.gif)
 </br>
 2)表格布局
-![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/grid_test.gif)
+</br>
+![image](https://github.com/XinYiWorld/CZSuperAdapters/blob/master/grid_test2.gif)
 ## Download (集成指南)
 1. first,edit your application build.gradle<br />
 ```Groovy
